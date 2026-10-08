@@ -15,6 +15,7 @@ const ACTION_LABEL: Record<string, string> = {
   'account.created': 'Account created',
   'account.updated': 'Plan or price changed',
   'account.notes': 'Notes updated',
+  'account.review_link': 'Google review link changed',
   'account.suspended': 'Account paused',
   'account.reactivated': 'Account turned back on',
   'account.opened_as_owner': 'Opened as business',
@@ -146,6 +147,8 @@ export default function AccountDetail() {
   const [del, setDel] = useState<string | null>(null);
   const [busy, setBusy] = useState('');
   useEffect(() => setNotes(data?.business?.adminNotes || ''), [data?.business?.adminNotes]);
+  const [link, setLink] = useState('');
+  useEffect(() => setLink(data?.business?.reviewLink || ''), [data?.business?.reviewLink]);
 
   if (!data) return <div className="space-y-4"><Skeleton className="h-16 w-80" /><Skeleton className="h-64" /><Skeleton className="h-64" /></div>;
   const b = data.business;
@@ -342,6 +345,15 @@ export default function AccountDetail() {
                 </div>
               </>
             )}
+          </Panel>
+
+          <Panel title="Google review link" action={b.reviewLink && !/DEMO_PLACE_ID/.test(b.reviewLink) ? <Badge tone="good">Saved</Badge> : <Badge tone="warn">Not set</Badge>}>
+            <p className="-mt-1 mb-3 text-xs text-ink-muted">Where this business’s customers post on Google. Works without a Google connection and is never removed — only replaced.</p>
+            <Input value={link} onChange={(e) => setLink(e.target.value)} placeholder="https://g.page/r/…/review or Place ID" />
+            <div className="mt-2 flex justify-end gap-2">
+              {b.reviewLink && !/DEMO_PLACE_ID/.test(b.reviewLink) && <a href={b.reviewLink} target="_blank" rel="noreferrer"><Button size="sm" variant="ghost" icon={<ExternalLink className="h-3.5 w-3.5" />}>Test</Button></a>}
+              <Button size="sm" disabled={!link.trim() || link.trim() === (b.reviewLink || '')} onClick={() => run('link', () => api(`/admin/accounts/${id}`, { method: 'PATCH', body: { reviewLink: link } }), 'Review link saved')} loading={busy === 'link'}>Save link</Button>
+            </div>
           </Panel>
 
           <Panel title="Private notes">

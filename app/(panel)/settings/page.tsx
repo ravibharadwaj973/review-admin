@@ -10,7 +10,7 @@ import { useAuth } from '@/lib/auth';
 import { timeAgo } from '@/lib/format';
 
 const ACTIONS: Record<string, string> = {
-  'account.created': 'created an account', 'account.updated': 'changed plan or price', 'account.notes': 'updated notes', 'account.suspended': 'paused an account',
+  'account.created': 'created an account', 'account.updated': 'changed plan or price', 'account.notes': 'updated notes', 'account.review_link': 'changed a Google review link', 'account.suspended': 'paused an account',
   'account.reactivated': 'turned an account back on', 'account.opened_as_owner': 'opened a business', 'owner.password_reset': 'reset an owner’s password', 'account.deleted': 'deleted an account',
   'invoice.created': 'created a bill', 'invoice.updated': 'changed a bill', 'invoice.deleted': 'deleted a bill', 'payment.recorded': 'recorded a payment', 'payment.reported': 'reported a payment',
   'payment.confirmed': 'confirmed a payment', 'payment.rejected': 'rejected a payment', 'payment.deleted': 'deleted a payment', 'google.synced': 'synced Google', 'google.disconnected': 'disconnected Google',

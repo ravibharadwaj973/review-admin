@@ -92,7 +92,7 @@ function AccountsInner() {
     <>
       <PageHeader
         title="Accounts"
-        subtitle="Every business using Starling. Flip the switch to pause or resume an account. Open one to manage its plan, bills, payments and Google connection."
+        subtitle="Every business using ReviewRankr. Flip the switch to pause or resume an account. Open one to manage its plan, bills, payments and Google connection."
         actions={<Button onClick={() => setAdding(true)} icon={<Plus className="h-4 w-4" />}>Add account</Button>}
       />
       <div className="mb-4 flex flex-col gap-3 lg:flex-row lg:items-center">

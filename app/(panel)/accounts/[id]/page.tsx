@@ -158,7 +158,7 @@ export default function AccountDetail() {
   const waNumber = digits.length === 10 ? `91${digits}` : digits;
   const nextBill = bill.invoices.filter((i: any) => ['pending', 'partial'].includes(i.status)).sort((x: any, y: any) => new Date(x.dueDate).getTime() - new Date(y.dueDate).getTime())[0];
   const reminder = nextBill
-    ? `Hi ${data.owner?.name?.split(' ')[0] || ''}, a reminder from ${bill.payTo?.companyName || 'Starling'}: your bill ${nextBill.number} has ${rupees(bill.due)} due${nextBill.dueDate ? ` (due ${shortDate(nextBill.dueDate)})` : ''}.${bill.payTo?.upiId ? ` You can pay by UPI to ${bill.payTo.upiId}.` : ''} Please reply with the payment reference once paid. Thank you!`
+    ? `Hi ${data.owner?.name?.split(' ')[0] || ''}, a reminder from ${bill.payTo?.companyName || 'ReviewRankr'}: your bill ${nextBill.number} has ${rupees(bill.due)} due${nextBill.dueDate ? ` (due ${shortDate(nextBill.dueDate)})` : ''}.${bill.payTo?.upiId ? ` You can pay by UPI to ${bill.payTo.upiId}.` : ''} Please reply with the payment reference once paid. Thank you!`
     : '';
 
   const run = async (key: string, fn: () => Promise<any>, ok?: string) => {

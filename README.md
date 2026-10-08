@@ -1,11 +1,11 @@
-# Starling Admin
+# ReviewRankr Admin
 
-The admin website for the people who run Starling: every business account, the on/off switch for access, plans and prices, discounts, bills, manual payments (UPI, cash, bank), Google connections, and admin users.
+The admin website for the people who run ReviewRankr: every business account, the on/off switch for access, plans and prices, discounts, bills, manual payments (UPI, cash, bank), Google connections, and admin users.
 
-It is a separate Next.js app with its own repo and its own Vercel project. It has **no backend of its own** — it uses the same Starling API as the business app (`/api/admin/*`).
+It is a separate Next.js app with its own repo and its own Vercel project. It has **no backend of its own** — it uses the same ReviewRankr API as the business app (`/api/admin/*`).
 
 ```
-Admin website (this repo, e.g. admin.yourdomain.in)  ──/api/*──►  Starling API (EC2)  ◄──/api/*──  Business app (Vercel)
+Admin website (this repo, e.g. admin.yourdomain.in)  ──/api/*──►  ReviewRankr API (EC2)  ◄──/api/*──  Business app (Vercel)
 ```
 
 ## Run locally
@@ -32,7 +32,7 @@ The API creates (or updates) this login every time it starts. Change `ADMIN_PASS
 2. Vercel → **Add New → Project** → import the repo (Framework: Next.js, root directory: the repo root).
 3. **Environment Variables:** `BACKEND_URL` = your API address, e.g. `https://review.jharavi.in` (no slash at the end).
 4. **Deploy.** Optional: add a domain such as `admin.yourdomain.in` under Settings → Domains.
-5. Optional, on the server: add `ADMIN_URL=https://<your admin address>` to the backend `.env` and run `pm2 reload starling-api --update-env`.
+5. Optional, on the server: add `ADMIN_URL=https://<your admin address>` to the backend `.env` and run `pm2 reload reviewrankr-api --update-env`.
 
 ## Pages
 

@@ -1,7 +1,20 @@
 'use client';
 
 // The admin app keeps its own sign-in, separate from the business app.
-const TOKEN_KEY = 'starling.admin.token';
+const TOKEN_KEY = 'reviewrankr.admin.token';
+
+// The app used to be called Starling. Keep the saved admin sign-in under the new name.
+if (typeof window !== 'undefined') {
+  try {
+    const old = window.localStorage.getItem('starling.admin.token');
+    if (old !== null) {
+      if (window.localStorage.getItem(TOKEN_KEY) === null) window.localStorage.setItem(TOKEN_KEY, old);
+      window.localStorage.removeItem('starling.admin.token');
+    }
+  } catch {
+    /* storage unavailable */
+  }
+}
 
 export function getToken(): string | null {
   try {

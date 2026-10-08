@@ -54,7 +54,7 @@ export default function AdminOverview() {
     <>
       <PageHeader
         title="Overview"
-        subtitle="Every business on Starling, the money coming in, and what needs your attention."
+        subtitle="Every business on ReviewRankr, the money coming in, and what needs your attention."
         actions={<Button onClick={() => setRecording(true)} icon={<Plus className="h-4 w-4" />}>Record a payment</Button>}
       />
 

@@ -144,7 +144,7 @@ export default function AdminSettings() {
               <Input value={newAdmin.password} onChange={(e) => setNewAdmin({ ...newAdmin, password: e.target.value })} placeholder="Password (new login only)" aria-label="Password" />
             </div>
             <div className="mt-2 flex items-center justify-between gap-3">
-              <p className="text-xs text-ink-muted">Someone who already has a Starling login only needs the email. Admins can see and change every account.</p>
+              <p className="text-xs text-ink-muted">Someone who already has a ReviewRankr login only needs the email. Admins can see and change every account.</p>
               <Button onClick={addAdmin} loading={busy === 'add'} disabled={!email.includes('@') || (!!newAdmin.password && newAdmin.password.length < 8)}>Add admin</Button>
             </div>
           </Panel>
@@ -154,7 +154,7 @@ export default function AdminSettings() {
               <ul className="thin-scroll max-h-[460px] divide-y divide-line-soft overflow-y-auto">
                 {activity.logs.map((l: any) => (
                   <li key={l._id} className="px-5 py-2.5 text-sm">
-                    <span className="font-medium">{l.admin?.name || (l.action === 'payment.reported' ? 'A business' : 'Starling')}</span> {ACTIONS[l.action] || l.action}
+                    <span className="font-medium">{l.admin?.name || (l.action === 'payment.reported' ? 'A business' : 'ReviewRankr')}</span> {ACTIONS[l.action] || l.action}
                     {l.business && <> · <Link href={`/accounts/${l.business._id}`} className="text-brand-600 hover:underline">{l.business.name}</Link></>}
                     <span className="block text-xs text-ink-faint">{timeAgo(l.createdAt)}</span>
                   </li>

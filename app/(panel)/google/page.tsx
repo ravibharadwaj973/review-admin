@@ -59,7 +59,7 @@ export default function AdminGoogle() {
               </span>
             </Step>
             <Step done={data.clientIdSet && data.secretSet}>
-              On the server, add <code className="rounded bg-mist px-1 text-xs">GOOGLE_CLIENT_ID</code> {data.clientIdSet ? <Badge tone="good">set</Badge> : <Badge tone="warn">missing</Badge>} and <code className="rounded bg-mist px-1 text-xs">GOOGLE_CLIENT_SECRET</code> {data.secretSet ? <Badge tone="good">set</Badge> : <Badge tone="warn">missing</Badge>} to <code className="rounded bg-mist px-1 text-xs">.env</code>, then run <code className="rounded bg-mist px-1 text-xs">pm2 reload starling-api --update-env</code>.
+              On the server, add <code className="rounded bg-mist px-1 text-xs">GOOGLE_CLIENT_ID</code> {data.clientIdSet ? <Badge tone="good">set</Badge> : <Badge tone="warn">missing</Badge>} and <code className="rounded bg-mist px-1 text-xs">GOOGLE_CLIENT_SECRET</code> {data.secretSet ? <Badge tone="good">set</Badge> : <Badge tone="warn">missing</Badge>} to <code className="rounded bg-mist px-1 text-xs">.env</code>, then run <code className="rounded bg-mist px-1 text-xs">pm2 reload reviewrankr-api --update-env</code>.
             </Step>
             <Step done={httpsAssets}>Photos and posts: Google downloads images from <span className="font-mono text-xs">{data.publicAssetUrl}</span>{httpsAssets ? ' — a public https address, good.' : ' — this must be a public https address (set FRONTEND_URL or PUBLIC_ASSET_URL).'}</Step>
           </ol>

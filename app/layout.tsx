@@ -5,8 +5,8 @@ import './globals.css';
 import { Providers } from './providers';
 
 export const metadata: Metadata = {
-  title: { default: 'Starling Admin', template: '%s · Starling Admin' },
-  description: 'Manage every Starling account: access, plans, prices, bills and payments.',
+  title: { default: 'ReviewRankr Admin', template: '%s · ReviewRankr Admin' },
+  description: 'Manage every ReviewRankr account: access, plans, prices, bills and payments.',
   icons: { icon: '/favicon.svg' },
   robots: { index: false, follow: false },
 };

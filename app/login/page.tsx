@@ -52,7 +52,7 @@ export default function LoginPage() {
       <div className="w-full max-w-[400px] rounded-xl3 bg-paper p-8 shadow-pop">
         <div className="mb-6 flex items-center gap-2"><Logo /><span className="rounded-md bg-ink px-1.5 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-white">Admin</span></div>
         <h1 className="font-display text-2xl font-semibold">Sign in to admin</h1>
-        <p className="mb-6 mt-1 flex items-center gap-1.5 text-sm text-ink-muted"><ShieldCheck className="h-4 w-4 text-leaf" />Only for the people who run Starling.</p>
+        <p className="mb-6 mt-1 flex items-center gap-1.5 text-sm text-ink-muted"><ShieldCheck className="h-4 w-4 text-leaf" />Only for the people who run ReviewRankr.</p>
         <Suspense><LoginForm /></Suspense>
       </div>
     </div>
